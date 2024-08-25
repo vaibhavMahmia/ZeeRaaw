@@ -1,0 +1,23 @@
+.sidebar-main-container {
+    background-color: #d18615;
+    padding: 1px;
+    border-radius: 5px;
+    height: 100%;
+}
+
+
+.sidebar-main-container ul{
+    padding: 5px;
+}
+.sidebar-main-container ul li{
+    text-decoration: none;
+    list-style: none;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    background-color: rgba(240, 248, 255, 0.664);
+    backdrop-filter: blur(4px);
+    width: 90%;
+    overflow: hidden;
+    border-radius: 5px;
+}

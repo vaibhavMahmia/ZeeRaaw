@@ -1,0 +1,16 @@
+.form-main {
+    background-color: rgba(255, 255, 255, 0.781);
+    backdrop-filter: blur(4px);
+}
+
+.paper-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.submit-btn {
+    background-color: rgb(255, 255, 255);
+}
