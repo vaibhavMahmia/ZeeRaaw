@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 const ObjectId = mongoose.Schema.Types.ObjectId;
 const taskSchema = mongoose.Schema({
     name: {type: String, required: true},
+    description: {type: String, required: true},
     creator: {type: ObjectId, ref: 'User'},
     status: {type: String},
     comments: [{
@@ -15,4 +16,6 @@ const taskSchema = mongoose.Schema({
         loggedTime:{type:String},
         time:{type:String}
     }]
-})
+}, { timestamps: true });
+
+export default mongoose.model('Task', taskSchema);

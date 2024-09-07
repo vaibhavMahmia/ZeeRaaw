@@ -3,7 +3,8 @@ import colors from 'colors';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import {connectionDB}  from './config/db.js';
-import userRoutes from './routes/user.js'
+import userRoutes from './routes/user.js';
+import taskRoutes from './routes/task.js';
 
 // configure env
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 // routes
 app.use('/user', userRoutes);
+app.use('/task', taskRoutes);
 
 // rest api
 app.get('/', (req, res)=>{

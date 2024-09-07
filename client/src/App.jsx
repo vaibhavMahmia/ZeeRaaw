@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from "./Routes/Login";
 import { Grid } from "@mui/material";
 import SideBar from "./Components/SideBar";
+import CreateTask from "./Routes/CreateTask";
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
+            <Route exact path="/createTask" element={<CreateTask />} />
           </Routes>
         </Grid>
       </Grid>
