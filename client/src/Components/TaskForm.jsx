@@ -14,6 +14,16 @@ const TaskForm = () => {
   const [formData, setFormData] = useState({ name: '', status: '', description: '' });
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  let style = {backgroundColor: '#8cc6ed'};
+  if(formData.status==='InProgress')
+    style = {backgroundColor: '#f7fcb1'};
+  else if(formData.status==='Done')
+    style = {backgroundColor: '#8fccaa'};
+  else if(formData.status==='Backlog')
+    style = {backgroundColor: '#cca58f'};
+  else
+    style = {backgroundColor: '#8cc6ed'};
+
   if (!user) {
     return (
       <Paper>
@@ -26,7 +36,6 @@ const TaskForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createtask(formData, navigate));
-    console.log(taskData);
   }
   const clear = () => setFormData({ name: '', status: '', description: '' });
   return (
@@ -36,8 +45,8 @@ const TaskForm = () => {
         <br />
         <TextField name='name' color="primary" variant='filled' label='Task Name' fullWidth value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
         <br />
-        <Box sx={{ minWidth: 120 }}>
-          <FormControl fullWidth>
+        <Box sx={{ minWidth: 120 }} style={{width:'100%'}}>
+          <FormControl fullWidth style={{...style, width:'100%'}}>
             <InputLabel id="demo-simple-select-label" fullWidth>Status</InputLabel>
             <Select
               labelId="demo-simple-select-label"

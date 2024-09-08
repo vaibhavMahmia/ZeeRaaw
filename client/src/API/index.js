@@ -14,3 +14,4 @@ API.interceptors.request.use((req) => {
 export const signIn = (formData) => API.post("/user/signin", formData);
 export const signUp = (formData) => API.post("/user/signup", formData);
 export const createTask = (formData) => API.post("/task/create", formData);
+export const getTasks = () => API.get("/task/tasks");
